@@ -10,6 +10,6 @@ fetch('https://fakestoreapi.com/products')
 
     document.querySelector('#tableElement').innerHTML = tableHTML;
 
-    var spinnerElement = docuiment.querySelector('#SpinnerContainer');
+    var spinnerElement = document.querySelector('#SpinnerContainer');
     spinnerElement.style.display='none';
 });

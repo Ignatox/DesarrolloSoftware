@@ -14,7 +14,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 @Getter
 @Setter
-public class Persona implements Serializable {
+public class Persona extends Base{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
    private int id;

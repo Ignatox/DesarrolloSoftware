@@ -1,28 +1,15 @@
 package com.utn.TPAPIRESTDiaz.controllers;
 
+import com.utn.TPAPIRESTDiaz.entities.Persona;
 import com.utn.TPAPIRESTDiaz.services.PersonaService;
+import com.utn.TPAPIRESTDiaz.services.PersonaServiceImpl;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @CrossOrigin(origins = "*")
-@RequestMapping(path = "api/v1/personas")
-public class PersonaController {
-    private PersonaService personaService;
+@RequestMapping(path = "api/BD1/personas")
+public class PersonaController extends BaseControllerImpl <Persona, PersonaServiceImpl>{
 
-    public PersonaController(PersonaService personaService) {
-        this.personaService = personaService;
-    }
-
-    public ResponseEntity<?> getAll() {
-        try {
-            return ResponseEntity.status(HttpStatus.OK).body(personaService.findALL());
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{");
-        }
-    }
 }
-
